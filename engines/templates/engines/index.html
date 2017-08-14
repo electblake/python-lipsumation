@@ -1,0 +1,10 @@
+{% if latest_engine_list %}
+    <h1>Lorem Ipsum Generators (Engines) List</h1>
+    <ul>
+    {% for engine in latest_engine_list %}
+        <li><a href="/engines/{{ engine.id }}/">{{ engine.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No engines are available.</p>
+{% endif %}
