@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    {% if latest_engine_list %}
+        <h1>Lorem Ipsum Generators</h1>
+        <ul>
+        {% for engine in latest_engine_list %}
+            <li><a href="{% url 'engines:detail' engine.slug %}">{{ engine.name }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No generators are available.</p>
+    {% endif %}
+{% endblock main %}

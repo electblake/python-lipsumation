@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bigfishtv-turret/4.0.0/turret.min.css" crossorigin="anonymous">
+        {% block head %}
+        {% endblock head %}
+    </head>
+    <body>
+    {% block body %}
+        <header style="padding: 1rem;background: #efefef; border-bottom: 1px solid #bcbcbc; margin-bottom: 1.5rem;">
+            <nav class="nav-inline">
+              <ul>
+                <li><strong>Lipsunation.com</strong>
+                <!-- <li><a href="/engines">Lorem Ipsum for the Nation - </a></li> -->
+                <li><a href="{% url 'engines:index' %}">engines</a></li>
+                <li><a href="#">github</a></li>
+                <!-- <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li> -->
+              </ul>
+            </nav>
+        </header>
+        <!-- <hr /> -->
+        <main class="container">
+            {% block main %}
+            {% endblock main %}
+        </main>
+    {% endblock body %}
+    </body>
+</html>

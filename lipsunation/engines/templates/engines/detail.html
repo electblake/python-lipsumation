@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    {% if engine %}
+        <section>
+           <h1><a href="{% url 'engines:index' %}">Engines</a> > {{ engine.name }} - Lorem Ipsum Generator</h1>
+           <span>Published: {{ engine.pub_date }}</span>
+        </section>
+        <section>
+            {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+            <form action="{% url 'engines:detail' engine.slug %}" method="post">
+                {% csrf_token %}
+                <fieldset>
+                    <label for="paragraph_count">Generate {{ engine.name }} Paragraphs</label>
+                    <input type="number" name="paragraph_count" value="3" />
+                    <button type="submit">Generate</button>
+                </fieldset>
+            </form>
+        </section>
+        <section>
+            <p>
+                <h3>Sample of {{ engine.name }} Filler</h3>
+                {{ engine.sample|linebreaks }}
+            </p>
+        </section>
+    {% else %}
+        <p>Engine not found.</p>
+    {% endif %}
+{% endblock main %}

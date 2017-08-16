@@ -19,7 +19,7 @@ from django.conf.urls import include, url
 from . import views
 
 urlpatterns = [
-    # url(r'', views.index, name='index'),
-    url(r'^engines/', include('engines.urls')),
+    # url(r'^$', home, name='home'),
+    url(r'^generators/', include('lipsunation.engines.urls', namespace='engines')),
     url(r'^admin/', admin.site.urls),
 ]
