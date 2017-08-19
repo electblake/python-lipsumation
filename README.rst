@@ -7,7 +7,6 @@ Install
 -------
 
 >>> virtualenv env
-. env/bin/activate
-
+>>> . env/bin/activate
 >>> pip install -r requirements.txt
 >>> python manage.py runserver localhost:8000
