@@ -6,7 +6,7 @@ python-lipsumation
 Install
 -------
 
-.. code-block:: python
+.. code:: python
     virtualenv env
     . env/bin/activate
     pip install
