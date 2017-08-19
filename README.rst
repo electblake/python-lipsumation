@@ -6,7 +6,17 @@ python-lipsumation
 Install
 -------
 
->>> virtualenv env
->>> . env/bin/activate
->>> pip install -r requirements.txt
->>> python manage.py runserver localhost:8000
+1. Clone project
+2. Setup virtualenv
+
+    virtualenv env
+    . env/bin/activate
+
+3. Install
+
+    pip install -r requirements.txt
+
+
+4. Start server
+
+    python manage.py runserver localhost:8000
