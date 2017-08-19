@@ -6,7 +6,8 @@ python-lipsumation
 Install
 -------
 
->>> virtualenv env
-. env/bin/activate
-pip install
-python manage.py runserver localhost:8000
+.. code-block:: python
+    virtualenv env
+    . env/bin/activate
+    pip install
+    python manage.py runserver localhost:8000
