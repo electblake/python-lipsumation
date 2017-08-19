@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.http import HttpResponse, JsonResponse
 from django.template import loader
 from .models import Engine
-from lipsunation.engines.lib.ipsum import get_paragraphs
+from lipsumation.engines.lib.ipsum import get_paragraphs
 from django.views import generic
 
 def ListView(request):
@@ -20,7 +20,7 @@ def DetailView(request, slug=None):
         context = {
             'engine': engine,
             'paragraph_count': request.POST.get('paragraph_count'),
-            'generated_paragraphs': get_paragraphs(engine, paragraph_count) if paragraph_count > 0 else None
+            'generated_paragraphs': get_paragraphs(engine.sample, engine.dictionary, paragraph_count) if paragraph_count > 0 else None
         }
 
         return render(request, 'engines/engine_detail.html', context)
@@ -28,6 +28,6 @@ def DetailView(request, slug=None):
 def LoremIpsumView(request, slug=None, paragraph_count=None):
     engine = get_object_or_404(Engine, slug=slug)
     paragraph_count = int(paragraph_count if paragraph_count is not None else 2)
-    paragraphs = get_paragraphs(engine, paragraph_count)
+    paragraphs = get_paragraphs(engine.sample, engine.dictionary, paragraph_count)
     return render(request, 'engines/lorem_ipsum.html', { 'engine': engine, 'generated_paragraphs': paragraphs })
 

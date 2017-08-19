@@ -1,6 +1,6 @@
 from django.conf.urls import url, include
 
-from lipsunation.engines.views import (
+from lipsumation.engines.views import (
     ListView,
     DetailView,
     LoremIpsumView

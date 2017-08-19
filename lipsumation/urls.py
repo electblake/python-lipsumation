@@ -20,6 +20,6 @@ from . import views
 
 urlpatterns = [
     # url(r'^$', home, name='home'),
-    url(r'^generators/', include('lipsunation.engines.urls', namespace='engines')),
+    url(r'^generators/', include('lipsumation.engines.urls', namespace='engines')),
     url(r'^admin/', admin.site.urls),
 ]
